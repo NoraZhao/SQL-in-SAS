@@ -1,0 +1,16 @@
+### Import file into SAS University Edition
+libname perm 'folders/myfolders/all_SAS_data';
+
+proc import datafile = 'folders/myfolders/all_excel/newclass.xlsx'
+     out = perm.newclass
+     dbms = xlsx replace;
+run;
+
+title 'After Using PROC IMPORT';
+proc contents data = perm.newclass;
+run;
+
+title;
+proc print data = perm.newclass;
+title 'After Using DBMS=XLSX in SAS Studio with Univ Edition to import file to PERM library';
+run;
