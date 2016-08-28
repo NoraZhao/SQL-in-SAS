@@ -14,3 +14,17 @@ title;
 proc print data = perm.newclass;
 title 'After Using DBMS=XLSX in SAS Studio with Univ Edition to import file to PERM library';
 run;
+
+### How to read multiple sheets
+# May need to use SHEET = to point to sheet you want to import
+proc import datafile = 'folders/myfolders/all_excel/twosheet.xlsx'
+     out = perm.one
+     dbms = xlsx replace;
+     Sheet = 'One';
+run;
+
+proc import datafile = 'folders/myfolders/all_excel/twosheet.xlsx'
+     out = perm.two
+     dbms = xlsx replace;
+     Sheet = 'two';
+run;
