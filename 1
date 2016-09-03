@@ -1,4 +1,4 @@
-### Import file into SAS Studio with University Edition
+/*Import file into SAS Studio with University Edition*/
 libname perm 'folders/myfolders/all_SAS_data';
 
 proc import datafile = 'folders/myfolders/all_excel/newclass.xlsx'
@@ -15,8 +15,8 @@ proc print data = perm.newclass;
 title 'After Using DBMS=XLSX in SAS Studio with Univ Edition to import file to PERM library';
 run;
 
-### How to read multiple sheets
-# May need to use SHEET = to point to sheet you want to import
+/***How to read multiple sheets***/
+/*May need to use SHEET = to point to sheet you want to import*/
 proc import datafile = 'folders/myfolders/all_excel/twosheet.xlsx' #Is the extension necessary?#
      out = perm.one
      dbms = xlsx replace;
@@ -28,3 +28,4 @@ proc import datafile = 'folders/myfolders/all_excel/twosheet.xlsx'
      dbms = xlsx replace;
      Sheet = 'two';
 run;
+
